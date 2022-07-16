@@ -10,8 +10,8 @@ const score = useTransition(computed(() => game.localGame.score), {
 
 <template>
   <div flex max-w="600px" w-full mx-auto>
-    <div text-left>
-      <div text-8xl font-black font-mono text-light-800 leading-18>
+    <div text-left self-end>
+      <div lt-md:text-7xl text-8xl font-black font-mono text-light-800 leading-18>
         {{ score.toFixed(0) }}
       </div>
       <div text-3xl font-mono op50>
@@ -25,11 +25,16 @@ const score = useTransition(computed(() => game.localGame.score), {
     <span flex-1 />
     <div flex flex-col>
       <div text-right op50 font-medium font-mono text-xl>
-        High Score: {{ game.highScore }}
+        <div text-2xl>
+          {{ game.highScore }}
+        </div>
+        <div text-base op70>
+          High Score
+        </div>
       </div>
       <span flex-1 />
-      <div flex flex-row>
-        <button bg-secondary mr-2 border-border border-1 rounded-full px-4 h-10 font-bold text-lg self-end @click="game.isMultiplayer = true">
+      <div flex flex-row lt-md:flex-col>
+        <button bg-secondary gt-md:mr-2 lt-md="mt-4 mb-2" border-border border-1 rounded-full px-4 h-10 font-bold text-lg self-end @click="game.isMultiplayer = true">
           {{ game.isMultiplayer ? 'End Session' : 'Multiplayer' }}
         </button>
         <button bg="#42b883" text="#213547" border-1 border="#5dffb6" rounded-full px-4 h-10 font-bold text-lg self-end @click="game.newGame">

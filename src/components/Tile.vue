@@ -38,7 +38,7 @@ const color = computed(() => {
     text-dark-50
     rounded
     flex place-items-center place-content-center
-    font-mono text-5xl font-black
+    font-mono lt-md:text-3xl text-5xl font-black
     relative
     overflow-hidden
     :style="{
