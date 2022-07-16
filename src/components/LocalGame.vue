@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SwipeDirection } from '@vueuse/core'
 import Scrim from './Scrim.vue'
 import { useGameStore } from '~/stores/game'
 import { useFireworks } from '~/composables/useConfetti'
@@ -11,10 +12,27 @@ const emit = defineEmits<{
   (e: 'update:seed'): string
 }>()
 
+const board = ref<HTMLElement>()
+
 const { play } = useFireworks()
+const { direction } = useSwipe(board)
 
 const game = useGameStore()
 const showWonState = ref(false)
+
+watch(direction, () => {
+  if (direction.value === SwipeDirection.UP)
+    game.localGame.up()
+
+  if (direction.value === SwipeDirection.DOWN)
+    game.localGame.down()
+
+  if (direction.value === SwipeDirection.LEFT)
+    game.localGame.left()
+
+  if (direction.value === SwipeDirection.RIGHT)
+    game.localGame.right()
+})
 
 game.localGame.onWon(() => {
   play()
@@ -67,7 +85,9 @@ onKeyStroke(['ArrowRight', 'd'], () => {
           Continue
         </button>
       </Scrim>
-      <Board :board="game.localGame.board" :score="game.localGame.score" />
+      <div ref="board">
+        <Board :board="game.localGame.board" :score="game.localGame.score" />
+      </div>
     </div>
   </div>
 </template>
