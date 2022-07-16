@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     Scrim: typeof import('./components/Scrim.vue')['default']
     Sharing: typeof import('./components/Sharing.vue')['default']
     Spinner: typeof import('./components/Spinner.vue')['default']
+    Status: typeof import('./components/Status.vue')['default']
     Tile: typeof import('./components/Tile.vue')['default']
   }
 }

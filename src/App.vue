@@ -22,6 +22,7 @@ const game = useGameStore()
         </div>
       </div>
     </div>
+    <Status />
   </main>
 </template>
 

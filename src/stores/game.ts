@@ -15,6 +15,11 @@ export const useGameStore = defineStore('game', () => {
   const remoteGame = use2048()
   const link = computed(() => `${window.location.origin}?game=${peer.id}`)
 
+  const onSessionStartedHook = createEventHook()
+  const onSessionEndedHook = createEventHook()
+  const onPlayerJoined = createEventHook()
+  const onPlayerLeft = createEventHook()
+
   const parmas = new URLSearchParams(window.location.search)
   const gameId = parmas.get('game')
 
@@ -90,5 +95,10 @@ export const useGameStore = defineStore('game', () => {
     localGame,
     remoteGame,
     highScore,
+
+    onSessionStarted: onSessionStartedHook.on,
+    onSessionEnded: onSessionEndedHook.on,
+    onPlayerJoined: onPlayerJoined.on,
+    onPlayerLeft: onPlayerLeft.on,
   }
 })

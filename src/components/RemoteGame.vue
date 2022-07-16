@@ -1,17 +1,4 @@
-<!-- <script setup lang="ts">
-import { useGameStore } from '~/stores/game'
-
-const game = useGameStore()
-</script>
-
-<template>
-  <div relative>
-    <Board :board="game.remoteGame.board" :score="game.remoteGame.score" />
-  </div>
-</template> -->
-
 <script setup lang="ts">
-import Scrim from './Scrim.vue'
 import { useGameStore } from '~/stores/game'
 
 const { play } = useFireworks()
