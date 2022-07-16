@@ -34,7 +34,7 @@ const score = useTransition(computed(() => game.localGame.score), {
       </div>
       <span flex-1 />
       <div flex flex-row lt-md:flex-col>
-        <button bg-secondary gt-md:mr-2 lt-md="mt-4 mb-2" border-border border-1 rounded-full px-4 h-10 font-bold text-lg self-end @click="game.isMultiplayer = true">
+        <button bg-secondary md:mr-2 lt-md="mt-4 mb-2" border-border border-1 rounded-full px-4 h-10 font-bold text-lg self-end @click="game.isMultiplayer = true">
           {{ game.isMultiplayer ? 'End Session' : 'Multiplayer' }}
         </button>
         <button bg="#42b883" text="#213547" border-1 border="#5dffb6" rounded-full px-4 h-10 font-bold text-lg self-end @click="game.newGame">

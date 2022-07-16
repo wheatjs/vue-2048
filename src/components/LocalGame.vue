@@ -15,6 +15,7 @@ const emit = defineEmits<{
 const board = ref<HTMLElement>()
 
 const { play } = useFireworks()
+
 const { direction } = useSwipe(board)
 
 const game = useGameStore()
