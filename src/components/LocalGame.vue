@@ -17,7 +17,7 @@ const board = ref<HTMLElement>()
 const { play } = useFireworks()
 
 const { direction } = useSwipe(board, {
-  threshold: 25,
+  threshold: 10,
 })
 
 const game = useGameStore()
