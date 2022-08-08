@@ -18,7 +18,6 @@ declare module '@vue/runtime-core' {
     RemoteGameSmall: typeof import('./components/RemoteGameSmall.vue')['default']
     Scrim: typeof import('./components/Scrim.vue')['default']
     Spinner: typeof import('./components/Spinner.vue')['default']
-    Status: typeof import('./components/Status.vue')['default']
     Tile: typeof import('./components/Tile.vue')['default']
   }
 }

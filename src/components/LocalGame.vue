@@ -99,7 +99,7 @@ onKeyStroke(['ArrowRight', 'd'], () => {
     <div relative>
       <Scrim :hide="!(game.localGame.isGameOver || game.remoteGame.hasWon)">
         <div text-5xl font-black>
-          Game Over
+          You Lose
         </div>
         <Button @click="game.startNewGame()">
           Play Again
