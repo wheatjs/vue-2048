@@ -41,6 +41,10 @@ export default defineConfig({
       ],
       theme: {
         colors: {
+          accent: {
+            300: '#5dffb6',
+            500: '#42b883',
+          },
           primary: '#242424',
           secondary: '#2f2f2f',
           border: '#484848',

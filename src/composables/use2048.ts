@@ -31,7 +31,7 @@ export function use2048() {
 
   let rand = createRandom(seed.value)
 
-  const winningScore = 2048
+  const winningScore = 32
   const score = ref(0)
   const rows = ref(4)
   const columns = ref(4)
@@ -173,6 +173,8 @@ export function use2048() {
     onMoveHook.trigger(direction)
   }
 
+  const largestTile = computed(() => Math.max(...board.value.map(x => x.map(y => y ? y[0] : 0)).flat()))
+
   const up = () => move('up')
   const down = () => move('down')
   const left = () => move('left')
@@ -190,6 +192,7 @@ export function use2048() {
     seed,
     isGameOver,
     hasWon,
+    largestTile,
     onWon: onDidWinHook.on,
     onMove: onMoveHook.on,
   }

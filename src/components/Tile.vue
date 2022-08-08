@@ -47,7 +47,12 @@ const color = computed(() => {
       'box-shadow': value && value >= 64 ? `0 0 10px 0px ${color[0]}` : 'none',
     }"
   >
-    <div absolute inset-0 border="b-2 b-black b-opacity-10 r-2 r-white r-opacity-10" />
+    <div
+      absolute inset-0
+      :class="{
+        'border-b-4 border-black border-opacity-10 border-r-4 border-r-white': value,
+      }"
+    />
     <slot />
   </div>
 </template>

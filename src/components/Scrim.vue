@@ -8,7 +8,7 @@ defineProps<{
   <div
     absolute
     inset-0 bg-black z-5 rounded-md
-    bg-opacity-90 backdrop-blur-sm
+    bg-opacity-50 backdrop-blur-sm
     grid place-content-center place-items-center gap-4
     transition-opacity
     opacity-0

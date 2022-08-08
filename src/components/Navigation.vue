@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import { useGameStore } from '~/stores/game'
-
-const game = useGameStore()
 </script>
 
 <template>
-  <nav h-18>
-    <div flex flex-row max-w="1200px" mx-auto h-full items-center gap-2>
-      <div text-2xl font-bold font-mono flex-1>
-        2048
-      </div>
-
-      <button i-carbon-friendship text-2xl @click="game.isMultiplayer = true" />
-      <button i-carbon-settings text-2xl />
+  <nav h-18 fixed top-0 left-0 right-0>
+    <div max-w-1200px h-full mx-auto flex flex-row items-center px-4>
+      <span flex-1 />
+      <a href="https://github.com" target="_blank">
+        <i i-carbon-logo-github block text-2xl text-white />
+      </a>
     </div>
   </nav>
 </template>

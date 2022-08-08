@@ -10,11 +10,6 @@ const score = useTransition(computed(() => game.remoteGame.score), {
 
 <template>
   <div flex max-w="600px" w-full mx-auto>
-    <div flex flex-row>
-      <button bg="#42b883" text="#213547" border-1 border="#5dffb6" rounded-full px-4 h-10 font-bold text-lg self-end>
-        Sabotage
-      </button>
-    </div>
     <span flex-1 />
     <div text-left>
       <div text-8xl font-black font-mono text-light-800 leading-18 text-right>

@@ -1,9 +1,22 @@
 <script setup lang="ts">
-
+defineProps<{
+  primary: boolean
+}>()
 </script>
 
 <template>
-  <button flex flex-row items-center space-x-1 bg-blue-500 text-blue-900 rounded border-b-2 border-l-2 border-blue-900 px-2 h-8>
+  <button
+    h-10
+    border-1 border-border
+    bg-secondary
+    rounded-full
+    font-bold
+    text-lg
+    px-4
+    :class="{
+      '!bg-accent-500 !border-accent-300 text-dark-900/70': primary,
+    }"
+  >
     <slot />
   </button>
 </template>
