@@ -109,12 +109,12 @@ export function use2048() {
     board.value = _board
   }
 
-  const move = async (direction: Direction) => {
+  const move = (direction: Direction) => {
     let _board = deepClone(board.value)
 
-    const [startRow, endRow, rowStep, startRowMove, endRowMove, rowStepMove] = direction === 'down'
-      ? [rows.value - 1, -1, -1, 0, rows.value, 1]
-      : [0, rows.value, 1, 0, rows.value, 1]
+    const [startRow, endRow, rowStep] = direction === 'down'
+      ? [0, rows.value, 1]
+      : [0, rows.value, 1]
     const [startColumn, endColumn, columnStep] = direction === 'right' ? [columns.value - 1, -1, -1] : [0, columns.value, 1]
 
     const rotations = directionToRotation(direction)
@@ -152,7 +152,7 @@ export function use2048() {
       }
     }
 
-    for (let row = startRowMove; row !== endRowMove; row += rowStepMove) {
+    for (let row = startRow; row !== endRow; row += rowStep) {
       for (let col = startColumn; col !== endColumn; col += columnStep) {
         for (let i = row; i > 0; i--) {
           if (_board[i - 1][col] === null) {
