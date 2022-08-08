@@ -2,6 +2,7 @@ import { createRandom, deepClone, isArrayEqual, rotateMatrix } from '~/utils'
 
 let id = 0
 const createId = () => id += 1
+const WINNING_SCORE = 2048
 
 export type BoardTile = [number, number] | null
 export type Board = BoardTile[][]
@@ -31,7 +32,6 @@ export function use2048() {
 
   let rand = createRandom(seed.value)
 
-  const winningScore = 32
   const score = ref(0)
   const rows = ref(4)
   const columns = ref(4)
@@ -138,7 +138,7 @@ export function use2048() {
             _board[row][col] = null
             merges.push(_board[row - i][col][1])
 
-            if (_board[row - i][col]![0] === winningScore && !hasWon.value)
+            if (_board[row - i][col]![0] === WINNING_SCORE && !hasWon.value)
               hasWon.value = true
 
             return
