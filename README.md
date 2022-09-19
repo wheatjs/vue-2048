@@ -16,7 +16,7 @@ A clone of the popular [2048 Game](https://play2048.co/) written in Vue with sup
 
 - Install [Node.js](https://nodejs.org/en/) >=v16 and [pnpm](https://pnpm.io/)
 - Run `pnpm install`
-- Run `pnpm dev` and visit `http://localhost:4444`
+- Run `pnpm dev` and visit `http://localhost:5173`
 
 ## Tech Stack
 - Vue
