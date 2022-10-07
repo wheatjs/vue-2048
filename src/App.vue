@@ -4,8 +4,8 @@ import { useGameStore } from '~/stores/game'
 
 const game = useGameStore()
 
-const parmas = new URLSearchParams(window.location.search)
-const gameId = parmas.get('game')
+const params = new URLSearchParams(window.location.search)
+const gameId = params.get('game')
 
 if (gameId)
   game.joinMultiplayerGame(gameId)

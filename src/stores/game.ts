@@ -28,8 +28,8 @@ export const useGameStore = defineStore('game', () => {
   const closeMultiplayerGame = () => {
     peer.destroyPeer()
     isMultiplayerGameOpen.value = false
-    const parmas = new URLSearchParams(window.location.search)
-    parmas.delete('game')
+    const params = new URLSearchParams(window.location.search)
+    params.delete('game')
     window.history.pushState({}, '', window.location.pathname)
     remoteGame.init(Math.random())
   }

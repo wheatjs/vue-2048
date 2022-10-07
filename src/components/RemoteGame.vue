@@ -24,7 +24,7 @@ const selectText = () => {
 
 <template>
   <div>
-    <RemoateGameStatus mb-2 op50 filter-grayscale-100 />
+    <RemoteGameStatus mb-2 op50 filter-grayscale-100 />
     <div relative>
       <Scrim :hide="!game.isWaitingForOtherPlayer">
         <div flex flex-row items-center>
